@@ -1,0 +1,1256 @@
+/*Fonts*/
+@import 'fonts'
+
+/*Variables*/
+$mainFont: RobotoLight,sans-serif!important	
+$fontBold: RobotoBold,sans-serif!important	
+$fontRegular: RobotoRegular,sans-serif!important	
+$fontMedium: RobotoMedium,sans-serif!important	
+$bgFirstSection: linear-gradient(to top,#010203,#082033)
+$bgColorFirstSection: #4d8add
+$white: #fff
+$black: #000
+$borderInfoBoxColor: red 
+
+/*Main Styles*/
+
+body 
+	font-family: $mainFont
+	outline: 0
+	color: $white!important
+
+	h1,h2,h3,h4,h5
+		font-family: $fontBold
+		letter-spacing: 1px
+
+button
+	outline: 0
+	
+#info-block-1 .in-info-block i,.scroll-to a i
+	background-position-y: 0
+	background-repeat: no-repeat
+
+a,p,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,input,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,select,small,span,strike,strong,sub,summary,sup,table,tbody,td,textarea,tfoot,th,thead,time,tr,tt,u,ul,var,video
+	border: 0
+	font: inherit
+	list-style-type: none
+	margin: 0
+	outline: 0
+	padding: 0
+	vertical-align: baseline
+
+.window-popup 
+	display: none
+	position: fixed
+	left: 0
+	right: 0
+	top: 0
+	width: 100%
+	height: 100%
+	background-color: rgba(0,0,0,0.6)
+	z-index: 999
+
+	#call-back-form 
+		width: 300px
+		margin: 0 auto
+		position: absolute
+		left: 0
+		right: 0
+		background-color: #4b4b4b
+		top: 20% 
+		border: 2px solid $borderInfoBoxColor
+		padding: 10px 15px
+		border-radius: 2px
+
+		.send-to-me
+			display: block
+			text-align: center
+			text-transform: uppercase
+			font-size: 15px
+			letter-spacing: 0.5px
+
+		.close-icon
+			color: $borderInfoBoxColor
+			position: absolute
+			top: -15px
+			right: -15px
+			font-size: 22px
+			padding: 2px 5px
+			border: 1px solid $white
+			color: $white
+			cursor: pointer
+
+		label
+			width: 100%
+			margin: 7px auto
+
+			span
+				color: red
+				margin-right: 5px
+
+			input, textarea
+				width: 100%	
+				border: 1px solid $borderInfoBoxColor
+				background-color: rgba(0,0,0,0)
+				margin-top: 5px 
+				padding-left: 10px 
+				color: $white
+				border-radius: 2px
+
+			input
+				height: 40px
+
+			textarea
+				resize: none	
+				height: 70px	
+
+		button
+			background-color: rgba(143,143,143,0.1)
+			border: 1px solid $borderInfoBoxColor
+			color: $white
+			display: block
+			margin: 0 auto
+			cursor: pointer
+			outline: none
+			border-radius: 2px
+			padding: 4px 20px
+
+			&:hover 
+				background-color: $borderInfoBoxColor
+				-webkit-transition: all 0.5s
+				-moz-transition: all 0.5s
+				transition: all 0.5s
+
+/*TOP MENU*/
+.top-menu-wrap
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	z-index: 999
+	background-color: rgba(0,0,0,0.4)
+	padding: 10px 0
+
+	&.hide
+		display: none
+
+	&.show
+		display: block	
+
+	.send-back-wrap
+		background-color: rgba(255,255,255,0)
+		text-align: center
+
+		.popup-with-form 
+			display: block
+			background-color: rgba(255,255,255,0)
+			border: 1px solid $borderInfoBoxColor
+			color: $white
+			outline: none
+			margin: 5px auto
+			padding: 7px 20px
+			cursor: pointer
+			border-radius: 2px
+			font-size: 14px
+			position: relative
+
+			.f
+				width: 0
+				position: absolute
+				left: 0
+				top: 0
+				background-color: $borderInfoBoxColor
+				height: 50%
+				z-index: -1
+				-webkit-transition: all 0.5s
+				-moz-transition: all 0.5s
+				transition: all 0.5s
+				-webkit-transition-timing-function: ease-in
+				transition-timing-function: ease-in
+
+			.s
+				width: 0
+				position: absolute
+				right: 0
+				bottom: 0
+				background-color: $borderInfoBoxColor
+				height: 50%	
+				z-index: -1
+				-webkit-transition: all 0.5s
+				-moz-transition: all 0.5s
+				transition: all 0.5s
+				-webkit-transition-timing-function: ease-in
+				transition-timing-function: ease-in
+
+			&:hover
+				color: $white
+
+				.f
+					width: 100%
+					right: 100%
+
+				.s
+					width: 100%
+					right: 0
+
+		.telephone
+			color: $white
+			font-size: 14px
+
+			&:hover
+				text-decoration: none			
+
+	.menu-block-wrap
+		.toggle-menu
+			width: 40px
+			height: 40px
+			border: 1px solid $white
+			background-color: $borderInfoBoxColor
+			cursor: pointer
+			outline: none
+			border-radius: 2px
+			position: absolute
+			top: 50%
+			margin-top: -20px
+			right: 20px
+
+			span
+				height: 2px
+				background-color: $white
+				display: block
+				margin: 0 auto
+				position: absolute
+				left: 0
+				right: 0
+				width: 25px
+
+				&:after
+					content: ''
+					height: 2px
+					background-color: $white
+					width: 80%
+					display: block
+					margin: 0 auto
+					position: absolute
+					left: 0
+					top: 8px
+					width: 25px
+					right: 0
+
+				&:before
+					content: ''
+					height: 2px
+					background-color: $white
+					width: 80%
+					display: block
+					margin: 0 auto
+					position: absolute
+					left: 0
+					top: -8px
+					width: 25px
+					right: 0
+
+			&.open
+				span
+					background-color: rgba(255,255,255,0)
+
+					&:after
+						-webkit-transform: rotate(45deg)
+						-moz-transform: rotate(45deg)
+						transform: rotate(45deg)
+						-webkit-transition: all 0.5s
+						-moz-transition: all 0.5s
+						transition: all 0.5s
+						top: 0
+
+					&:before
+						-webkit-transform: rotate(-45deg)
+						-moz-transform: rotate(-45deg)
+						transform: rotate(-45deg)
+						-webkit-transition: all 0.5s
+						-moz-transition: all 0.5s
+						transition: all 0.5s
+						top: 0					
+
+		
+.top-menu
+	position: fixed
+	right: 0
+	top: 0
+	width: 0
+	height: 100%
+	background-color: rgba(0,0,0,0.6)	
+	-webkit-transition: all 0.25s
+	-moz-transition: all 0.25s
+	transition: all 0.25s
+	-webkit-transition-timing-function: cubic-bezier(0.1, 0.1, 0.1, 0.1)
+	transition-timing-function: cubic-bezier(0.1, 0.1, 0.1, 0.1)
+	overflow: hidden
+	z-index: 999
+
+	ul
+		margin-top: 150px
+		opacity: 0
+		-webkit-transition: all 0.5s
+		-moz-transition: all 0.5s
+		transition: all 0.5s
+
+		&.open
+			opacity: 1
+			-webkit-transition: all 0.25s
+			-moz-transition: all 0.25s
+			transition: all 0.25s
+
+		li
+			display: block
+			margin-bottom: 20px
+
+			a 
+				color: $white
+				font-family: $fontBold
+				font-size: 15px
+				position: relative
+				display: block
+				letter-spacing: 0.5px
+				padding: 10px 0 10px 50px
+				-webkit-transition: all 0.25s
+				-moz-transition: all 0.25s
+				transition: all 0.25s
+
+				i
+					position: absolute
+					right: 30px
+					top: 50%
+					margin-top: -7px
+					-webkit-transition: all 0.25s
+					-moz-transition: all 0.25s
+					transition: all 0.25s
+
+				&:after
+					content: ''
+					display: block
+					width: 100%
+					position: absolute
+					left: 100%
+					background-color: rgba(255,255,255,0.7)
+					height: 100%
+					top: 0
+					z-index: -1
+					-webkit-transition: all 0.5s
+					-moz-transition: all 0.5s
+					transition: all 0.5s
+					-webkit-transition-timing-function: cubic-bezier(0.1, 0.1, 0.1, 0.1)
+					transition-timing-function: cubic-bezier(0.1, 0.1, 0.1, 0.1)
+
+				&:hover
+					text-decoration: none
+					color: $borderInfoBoxColor
+
+					i
+						color: $borderInfoBoxColor
+
+					&:after
+						left: 0
+
+	&.open
+		width: 300px
+
+		.toggle-menu 
+		    display: inline-block
+		    height: 40px
+		    width: 40px
+		    background-color: #e5343f
+		    border: 1px solid $white
+		    border-radius: 2px
+		    margin-top: 5px
+		    padding: 0
+		    position: relative
+		    z-index: 2
+		    float: right
+
+.small-top-menu
+	display: none
+	position: fixed
+	top: 0
+	z-index: 999
+	background-color: $white
+	width: 100%
+	border-bottom: 1px solid $borderInfoBoxColor
+
+	&.show
+		display: block
+
+	.logo
+		a 
+			img
+				width: 120px
+
+	.to-top
+		width: 40px
+		height: 100%
+		margin-top: 5px
+		display: block
+
+		.line
+			&:nth-child(1)
+				display: none
+
+			&:nth-child(2)	
+				display: block
+				margin: 0 auto
+				border: 20px solid transparent
+				border-bottom-color: #7c7c7c
+				border-top: 0 	
+
+			&:nth-child(3)
+				display: block
+				height: 15px
+				width: 14px
+				background-color: #7c7c7c
+				margin: 0 auto	
+
+	.send-back-block
+		text-align: center
+		display: table
+		height: 100%
+		width: 100%
+
+		.send-back-wrap
+			display: table-row
+
+			a
+				color: $borderInfoBoxColor
+				text-decoration: none
+				font-family: $fontRegular
+				margin: 0 5px
+				display: table-cell
+				vertical-align: middle
+
+	.menu-block-wrap
+		.toggle-menu
+			width: 40px
+			height: 40px
+			border: 1px solid $white
+			background-color: $borderInfoBoxColor
+			cursor: pointer
+			outline: none
+			border-radius: 2px
+			position: absolute
+			top: 50%
+			margin-top: -20px
+			right: 20px
+
+			span
+				height: 2px
+				background-color: $white
+				display: block
+				margin: 0 auto
+				position: absolute
+				left: 0
+				right: 0
+				width: 25px
+
+				&:after
+					content: ''
+					height: 2px
+					background-color: $white
+					width: 80%
+					display: block
+					margin: 0 auto
+					position: absolute
+					left: 0
+					top: 8px
+					width: 25px
+					right: 0
+
+				&:before
+					content: ''
+					height: 2px
+					background-color: $white
+					width: 80%
+					display: block
+					margin: 0 auto
+					position: absolute
+					left: 0
+					top: -8px
+					width: 25px
+					right: 0
+
+			&.open
+				span
+					background-color: rgba(255,255,255,0)
+
+					&:after
+						-webkit-transform: rotate(45deg)
+						-moz-transform: rotate(45deg)
+						transform: rotate(45deg)
+						-webkit-transition: all 0.5s
+						-moz-transition: all 0.5s
+						transition: all 0.5s
+						top: 0
+
+					&:before
+						-webkit-transform: rotate(-45deg)
+						-moz-transform: rotate(-45deg)
+						transform: rotate(-45deg)
+						-webkit-transition: all 0.5s
+						-moz-transition: all 0.5s
+						transition: all 0.5s
+						top: 0		   						
+
+/*FIRST SECTION*/
+
+#first-section 
+	width: 100%
+	background-image: $bgFirstSection 
+	-moz-background-image: $bgFirstSection
+	-webkit-background-image: $bgFirstSection
+	position: relative
+	min-height: 550px
+	max-height: 1110px
+	overflow: hidden
+	background-color: $bgColorFirstSection
+	z-index: 99
+
+	.container 
+		height: 100%
+
+		.row
+			height: 100%
+
+	.second-bg
+	    left: 0
+	    top: 0
+	    width: 100%
+	    background-image: url(../img/second-main-bg.png)
+	    height: 100%
+	    display: block
+	    opacity: .06
+	    background-size: cover
+	    position: absolute
+	    z-index: -1
+
+	.wrap-info-text 
+		text-align: left	
+		display: table
+		height: 100%
+
+		.pre-center-disp 
+			display: table-row
+
+			.center-disp 
+				display: table-cell
+				vertical-align: middle
+				height: 100%
+		
+		p, span
+			font-weight: 100  
+
+		p 
+			font-size: 40px	
+			margin-bottom: 5px
+			line-height: 40px
+
+		span
+			letter-spacing: 3px
+			font-size: 20px	
+
+		.social-network 
+			li 
+				display: inline-block
+				margin: 5px 20px
+
+				&:first-child
+					margin-left: 0
+
+				a
+					color: $borderInfoBoxColor
+
+	.wrap-info-blocks
+		text-align: left	
+		display: table
+		height: 100%
+		width: 100%
+
+		.pre-center-disp 
+			display: table-row
+
+			.center-disp 
+				display: table-cell
+				vertical-align: middle
+				height: 100%
+
+		.info-content-box 
+			width: 45%
+			display: inline-block
+			text-align: center
+			border: 1px solid $white
+			margin: 10px
+			padding: 15px 0
+			border-radius: 2px
+			position: relative
+			overflow: hidden
+			cursor: pointer
+
+			.in-info-block
+				i
+					display: block
+					height: 100px
+					margin: 0 auto
+					background-image: url(../img/spraite.png)
+
+					&.idea
+						width: 96px
+						background-position: left -15px top 0
+						background-position-x: -15px
+						background-position-y: 0
+
+					&.crossbrawser
+						width: 117px
+						background-position: left -351px top 0
+						background-position-x: -351px
+						background-position-y: 0
+
+					&.css
+						width: 127px
+						background-position: left -127px top 0
+						background-position-x: -127px
+						background-position-y: 0
+
+					&.scrupulosity
+						width: 98px
+						background-position: left -254px top 0
+						background-position-x: -254px
+						background-position-y: 0		
+
+				span
+					display: block
+					margin: 10px 0
+					letter-spacing: 0.5px	
+
+			&:hover 
+				border: 1px solid $borderInfoBoxColor
+
+				.in-info-block
+					i
+						&.idea
+							background-position: left -15px top -144px
+							background-position-x: -15px
+							background-position-y: -144px
+
+						&.crossbrawser
+							background-position: left -351px top-146px
+							background-position-x: -351px
+							background-position-y: -146px
+
+						&.css
+							background-position: left -127px top-148px
+							background-position-x: -127px
+							background-position-y: -148px
+
+						&.scrupulosity
+							background-position: left -254px top-144px
+							background-position-x: -254px
+							background-position-y: -144px	
+
+				.more-button 
+						border: 1px solid $borderInfoBoxColor	
+
+						i
+							color: $borderInfoBoxColor					
+
+			.hidden-block
+				opacity: 0
+				display: block
+				position: absolute
+				height: 100%
+				top: 100%
+				background-color: rgba(255,255,255,0.7)
+				-webkit-transition: all 0.35s
+				-moz-transition: all 0.35s
+				transition: all 0.35s
+				-webkit-transition-timing-function: cubic-bezier(0.1, 0.1, 0.1, 0.1)
+				transition-timing-function: cubic-bezier(0.1, 0.1, 0.1, 0.1)
+				padding: 23% 5px 0 5px
+
+				p
+					color: $borderInfoBoxColor
+
+			.more-button
+				position: absolute
+				width: 27px 
+				height: 27px
+				border: 1px solid $white
+				border-radius: 50%
+				display: block
+				margin: 0 auto
+				left: 0
+				right: 0
+
+				i
+					position: relative
+					top: -5px
+					color: $white
+
+			&.current
+				.in-info-block
+					opacity: 0.3
+					-webkit-transition: all 0.35s
+					-moz-transition: all 0.35s
+					transition: all 0.35s
+
+				.hidden-block
+					opacity: 1
+					top: 0
+					-webkit-transition: all 0.35s
+					-moz-transition: all 0.35s
+					transition: all 0.35s
+					-webkit-transition-timing-function: cubic-bezier(0.1, 0.1, 0.1, 0.1)
+					transition-timing-function: cubic-bezier(0.1, 0.1, 0.1, 0.1)
+
+				.more-button
+					i
+						-webkit-transform: rotate(180deg)
+						-moz-transform: rotate(180deg)
+						transform: rotate(180deg)	
+
+	.bottom-line
+		width: 100%
+		margin: 0 auto
+		position: absolute
+		height: 30px
+		left: 0
+		right: 0
+		bottom: 0
+
+		i
+			width: 10%
+			height: 5px
+			background-color: $white	
+			display: block
+			margin: 5px auto 0
+
+/*SECOND DECTION*/
+
+#second-section
+	min-height: 550px
+	background-image: linear-gradient(to top,$white,#010203)
+	-moz-background-image: linear-gradient(to top,$white,#010203)
+	-webkit-background-image: linear-gradient(to top,$white,#010203)
+	padding: 100px 0
+	position: relative
+
+	.second-bg
+	    left: 0
+	    top: 0
+	    width: 100%
+	    background-image: url(../img/second-apply-bg.png)
+	    height: 100%
+	    display: block
+	    opacity: 0.05
+	    background-size: cover
+	    position: absolute
+
+	.apply-servises
+		position: relative
+		text-align: center
+
+		h3
+			text-transform: uppercase
+			margin: 30px 0
+			position: relative
+			display: block
+			color: $borderInfoBoxColor
+			text-align: center
+
+		.apply-block
+			width: 16%
+			display: inline-block
+			cursor: pointer
+
+			i
+				font-size: 100px
+				color: $white	
+				display: block
+				margin: 50px auto 15px
+
+				&.bootstrap
+					background-image: url(../img/spraite.png)
+					background-repeat: no-repeat
+					background-position: top 8px left -941px
+					background-position-x: -941px
+					background-position-y: 8px
+					width: 88px
+					height: 100px
+
+				&.jquery
+					background-image: url(../img/spraite.png)
+					background-repeat: no-repeat
+					background-position: top 8px left -1045px
+					background-position-x: -1045px
+					background-position-y: 8px
+					width: 100px
+					height: 100px	
+
+			span		
+				color: $white
+				position: relative
+
+				&:before
+					content: ''
+					position: absolute
+					bottom: -19px
+					left: 0
+					right: 0
+					margin: 5px auto 0
+					background-image: url(../img/spraite.png) 
+					background-repeat: no-repeat
+					background-position: top 0px left -1156px
+					background-position-x: -1156px
+					background-position-y: 0px
+					width: 12px
+					height: 15px
+					z-index: 99
+					background-color: #b7b7b7
+					display: none
+
+			.hint
+				position: absolute
+				padding: 10px
+				width: 95%
+				text-align: left
+				display: block
+				left: 0
+				border: 2px solid #888181
+				margin-top: 15px
+				letter-spacing: 0.5px	
+				color: #888181
+				border-radius: 2px
+				opacity: 0
+				-webkit-transition: all 0.35s
+				-moz-transition: all 0.35s
+				transition: all 0.35s
+
+			&:hover		
+				.hint
+					opacity: 1
+
+				span
+					&:before
+						display: block
+
+	.bottom-line
+		width: 10%
+		height: 5px
+		background-color: $black
+		position: absolute
+		bottom: 25px
+		margin: 0 auto
+		left: 0
+		right: 0						
+
+/*THIRD SECTION*/
+
+#third-section
+	position: relative
+	padding: 100px 0
+
+	.second-bg
+	    left: 0
+	    top: 0
+	    width: 100%
+	    background-image: url(../img/second-servises-bg.png)
+	    height: 100%
+	    display: block
+	    opacity: .06
+	    background-size: cover
+	    position: absolute
+	    z-index: -1
+
+	h3
+		text-align: center
+		color: $borderInfoBoxColor  
+		text-transform: uppercase  
+
+	.servises-blocks-wrap 
+		color: $black	
+		padding-top: 50px
+		text-align: center
+
+		.servises-blocks
+			position: relative
+			padding: 15px 5px
+
+			&:hover
+				box-shadow: 0px 1px 5px 5px rgba(255,0,0,0.1)
+				-webkit-transition: all 0.3s
+				-moz-transition: all 0.3s
+				transition: all 0.3s
+
+			&.working-out
+				i
+					display: block
+					width: 149px
+					height: 130px
+					background-image: url(../img/spraite.png)
+					background-repeat: no-repeat 
+					background-position: left -481px top -5px
+					background-position-x: -481px
+					background-position-y: -5px
+					margin: 0 auto
+
+			&.finalization
+				i
+					display: block
+					width: 159px
+					height: 130px
+					background-image: url(../img/spraite.png)
+					background-repeat: no-repeat 
+					background-position: left -629px top -5px
+					background-position-x: -629px
+					background-position-y: -5px	
+					margin: 0 auto
+
+			&.design
+				i
+					display: block
+					width: 149px
+					height: 130px
+					background-image: url(../img/spraite.png)
+					background-repeat: no-repeat 
+					background-position: left -792px top -5px
+					background-position-x: -792px
+					background-position-y: -5px	
+					margin: 0 auto	
+
+			h5
+				text-transform: uppercase
+				margin: 30px 0
+				padding: 7px 0
+				border: 1px solid $borderInfoBoxColor
+				border-right: none
+				border-left: none
+				position: relative
+				overflow: hidden
+				-webkit-transition: all 0.15s
+				-moz-transition: all 0.15s
+				transition: all 0.15s
+				-webkit-transition-timing-function: cubic-bezier(0.1, 0.1, 0.1, 0.1)
+				transition-timing-function: cubic-bezier(0.1, 0.1, 0.1, 0.1)
+
+				&:after
+					content: ''
+					position: absolute
+					left: 100%
+					background-color: $borderInfoBoxColor
+					width: 0
+					height: 100%
+					top: 0
+					z-index: -1
+					-webkit-transition: all 0.35s
+					-moz-transition: all 0.35s
+					transition: all 0.35s
+					-webkit-transition-timing-function: cubic-bezier(0.1, 0.1, 0.1, 0.1)
+					transition-timing-function: cubic-bezier(0.1, 0.1, 0.1, 0.1)
+
+			p
+				text-align: left
+				margin: 10px 0 30px	
+
+			button
+				width: 60%
+				margin: 0 auto
+				outline: none
+				color: $white
+				text-transform: uppercase
+				padding: 7px 0
+				cursor: pointer
+				letter-spacing: 1px
+				position: relative
+				border: 1px solid $borderInfoBoxColor
+				z-index: 1
+				font-family: $fontRegular
+				overflow: hidden
+				border-right: none
+				border-left: none
+				-webkit-transition: all 0.15s
+				-moz-transition: all 0.15s
+				transition: all 0.15s
+				-webkit-transition-timing-function: cubic-bezier(0.1, 0.1, 0.1, 0.1)
+				transition-timing-function: cubic-bezier(0.1, 0.1, 0.1, 0.1)
+				background-color: inherit
+
+				&:before
+					content: ''
+					width: 100%
+					background-color: $borderInfoBoxColor
+					position: absolute
+					right: 0
+					height: 100%
+					top: 0
+					z-index: -1
+					-webkit-transition: all 0.35s
+					-moz-transition: all 0.35s
+					transition: all 0.35s
+					-webkit-transition-timing-function: cubic-bezier(0.1, 0.1, 0.1, 0.1)
+					transition-timing-function: cubic-bezier(0.1, 0.1, 0.1, 0.1)
+
+			&:hover
+ 				h5 
+ 					color: $white 
+
+ 					&:after
+ 						width: 100%
+ 						left: 0
+
+ 				button
+ 					background-color: inherit
+ 					color: $borderInfoBoxColor
+
+ 					&:before
+ 						width: 0
+ 						right: 0	 									 	
+
+/*FOURTH SECTION*/ 	
+
+#fourth-section
+	position: relative
+	padding: 100px 0
+	background-color: $white
+
+	.second-bg
+	    left: 0
+	    top: 0
+	    width: 100%
+	    background-image: url(../img/second-clients-bg.png)
+	    height: 100%
+	    display: block
+	    opacity: 0.04
+	    background-size: cover
+	    position: absolute
+
+	h3
+		text-transform: uppercase
+		margin: 30px 0
+		position: relative
+		display: block
+		color: $borderInfoBoxColor
+		text-align: center
+
+	.klients-block-wrap
+		padding: 70px 0 50px
+
+		.klients-block
+			display: block
+			text-align: center 
+
+			img
+				-webkit-filter: grayscale(100%)
+				-moz-filter: grayscale(100%)
+				-ms-filter: grayscale(100%)
+				-o-filter: grayscale(100%)
+				filter: grayscale(100%)
+				opacity: 0.8
+
+			&:hover
+				img
+					-webkit-filter: grayscale(0%)
+					-moz-filter: grayscale(0%)
+					-ms-filter: grayscale(0%)
+					-o-filter: grayscale(0%)
+					filter: grayscale(0%)
+					opacity: 1
+					-webkit-transition: all 0.5s
+					-moz-transition: all 0.5s
+					transition: all 0.5s	
+
+/*FIFTH SECTION*/ 
+
+#fifth-section
+	position: relative
+	padding: 100px 0 150px
+	background-image: linear-gradient(to top,#cdcdce,$white)
+	-moz-background-image: linear-gradient(to top,#cdcdce,$white)
+	-webkit-background-image: linear-gradient(to top,#cdcdce,$white)
+	z-index: 99
+
+	.second-bg
+		background-image: url(../img/second-contact-bg.png) 
+		position: absolute
+		left: 0
+		top: 0
+		background-repeat: no-repeat
+		display: block
+		width: 100%
+		height: 100%
+		opacity: .4
+		z-index: -1
+
+	h3
+		text-transform: uppercase
+		margin: 30px 0
+		position: relative
+		display: block
+		color: $borderInfoBoxColor
+		text-align: center
+							
+	#footer-form
+		width: 100%
+		margin: 50px 0
+
+		.area
+			width: 49%
+			display: inline-block	
+			vertical-align: top
+
+			label
+				display: block
+				width: 96%
+				margin: 0 auto 20px
+
+				input, textarea
+					border: 1px solid $borderInfoBoxColor
+					width: 100%
+					padding-left: 10px
+					background-color: inherit
+
+				input
+					height: 60px	
+								
+				textarea
+					height: 220px
+					resize: none
+					padding-top: 10px 					
+
+		button
+			margin: 0 auto
+			display: block
+			outline: none
+			color: $white
+			text-transform: uppercase
+			padding: 10px 35px
+			cursor: pointer
+			letter-spacing: 1px
+			position: relative
+			border: 1px solid $borderInfoBoxColor
+			z-index: 1
+			font-family: $fontRegular
+			overflow: hidden
+			border-right: none
+			border-left: none
+			-webkit-transition: all 0.25s
+			-moz-transition: all 0.25s
+			transition: all 0.25s
+			-webkit-transition-timing-function: cubic-bezier(0.1, 0.1, 0.1, 0.1)
+			transition-timing-function: cubic-bezier(0.1, 0.1, 0.1, 0.1)
+			background-color: $borderInfoBoxColor
+
+			&:before
+				content: ''
+				width: 100%
+				background-color: $borderInfoBoxColor
+				position: absolute
+				right: 0
+				height: 100%
+				top: 0
+				z-index: -1
+				-webkit-transition: all 0.25s
+				-moz-transition: all 0.25s
+				transition: all 0.25s
+				-webkit-transition-timing-function: cubic-bezier(0.1, 0.1, 0.1, 0.1)
+				transition-timing-function: cubic-bezier(0.1, 0.1, 0.1, 0.1)
+
+			&:hover
+				background-color: inherit
+				color: $borderInfoBoxColor	
+
+				&:before
+					width: 0
+					right: 0
+
+	.footer-info
+		text-align: center
+ 
+		.block1
+			text-align: right
+
+		.block
+			text-align: left
+
+		.block, .block1
+			width: 49%
+			display: inline-block
+			vertical-align: top
+
+			.contacts
+				display: block	
+				color: $borderInfoBoxColor
+				text-decoration: none
+				margin: 20px auto
+
+				i
+					color: $black
+					margin: 0 20px
+
+			.footer-phone, .footer-email, .footer-skype, .footer-viber
+				font-family: $fontRegular 	
+				font-size: 25px		
+
+		.footer-social
+			margin-top: 50px
+
+			li
+				display: inline-block
+				margin: 0 35px	
+
+				a
+					color: $borderInfoBoxColor
+					position: relative
+					display: block
+					min-width: 40px
+					padding: 10px 20px
+					-webkit-transition: all 0.25s
+					-moz-transition: all 0.25s
+					transition: all 0.25s
+					-webkit-transition-timing-function: cubic-bezier(0.1, 0.1, 0.1, 0.1)
+					transition-timing-function: cubic-bezier(0.1, 0.1, 0.1, 0.1)
+
+					&:before
+						content: ''
+						position: absolute
+						bottom: 0
+						left: 0
+						background-color: $borderInfoBoxColor
+						width: 100%
+						height: 0
+						z-index: -1
+						-webkit-transition: all 0.25s
+						-moz-transition: all 0.25s
+						transition: all 0.25s
+						-webkit-transition-timing-function: cubic-bezier(0.1, 0.1, 0.1, 0.1)
+						transition-timing-function: cubic-bezier(0.1, 0.1, 0.1, 0.1)
+
+					&:hover
+						color: $white
+
+						&:before
+							height: 100%	
+
+					i
+						font-size: 20px
+
+	.footer-low	
+		position: absolute
+		bottom: 0
+		left: 0
+		background-color: rgba(0,0,0,0.05)
+		width: 100%
+		text-align: center
+		padding: 5px 0
+
+		p
+			font-size: 12px
+			margin: 0
+
+/*Media Queries*/
+@import 'media'	
