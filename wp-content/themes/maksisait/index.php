@@ -10,30 +10,9 @@
               <div class="wrap-info-text">
                 <div class="pre-center-disp">
                   <div class="center-disp">
-                    <p>Максимовский Сергей</p>
-                    <span>Front-End developer</span>
-                    <ul class="social-network">
-                       <li>
-                        <a href="#" target="_blank">
-                          <i class="fab fa-twitter"></i>
-                        </a>
-                       </li> 
-                       <li>
-                        <a href="#" target="_blank">
-                          <i class="fab fa-vk"></i>
-                        </a>
-                       </li>
-                       <li>
-                        <a href="#" target="_blank">
-                          <i class="fab fa-facebook-f"></i>
-                        </a>
-                       </li>
-                       <li>
-                        <a href="#" target="_blank">
-                          <i class="fab fa-instagram"></i>
-                        </a>
-                       </li>
-                    </ul>
+                    <p><?php echo bloginfo('name'); ?>	</p>
+                    <span><?php echo bloginfo('description'); ?></span>
+                    <?php get_template_part('social-main' , 'index'); ?>
                   </div>
                 </div>
               </div>
@@ -44,74 +23,33 @@
               <div class="wrap-info-blocks">
                 <div class="pre-center-disp">
                   <div class="center-disp">
-                    <div class="info-content-box">
-                      <div class="info-block-content">
-                        <div class="in-info-block">
-                          <i class="idea"></i>
-                          <span>Свежие идеи</span>
-                        </div>
-                        <div class="hidden-block">
-                          <p>
-                            Нестартный, оригинальный подход к работе.&nbsp;
-                          </p>
-                          </div>
-                          <a href="javascript:void(0);" class="more-button">
-                            <i class="fa fa-angle-up"></i>
-                          </a>
-                        </div>
-                    </div>
+                  	<?php if ( have_posts() ) : query_posts('cat=4');
+						while (have_posts()) : the_post(); ?>
 
-                    <div class="info-content-box">
-                      <div class="info-block-content">
-                        <div class="in-info-block">
-                          <i class="crossbrawser"></i>
-                          <span>Кроссбраузерность</span>
-                        </div>
-                        <div class="hidden-block">
-                          <p>
-                            Нестартный, оригинальный подход к работе.&nbsp;
-                          </p>
-                          </div>
-                          <a href="javascript:void(0);" class="more-button">
-                            <i class="fa fa-angle-up"></i>
-                          </a>
-                        </div>
-                    </div>
-
-                    <div class="info-content-box">
-                      <div class="info-block-content">
-                        <div class="in-info-block">
-                          <i class="css"></i>
-                          <span>Адаптивная вёрстка</span>
-                        </div>
-                        <div class="hidden-block">
-                          <p>
-                            Нестартный, оригинальный подход к работе.&nbsp;
-                          </p>
-                          </div>
-                          <a href="javascript:void(0);" class="more-button">
-                            <i class="fa fa-angle-up"></i>
-                          </a>
-                        </div>
-                    </div>
-
-                    <div class="info-content-box">
-                      <div class="info-block-content">
-                        <div class="in-info-block">
-                          <i class="scrupulosity"></i>
-                          <span>Скрупулезность</span>
-                        </div>
-                        <div class="hidden-block">
-                          <p>
-                            Нестартный, оригинальный подход к работе.&nbsp;
-                          </p>
-                          </div>
-                          <a href="javascript:void(0);" class="more-button">
-                            <i class="fa fa-angle-up"></i>
-                          </a>
-                        </div>
-                    </div>
-                  </div>
+						<div class="col-xs-6 info-content-box">
+							<div class="info-block-content">
+								<div class="in-info-block">
+									<i class=<?php 
+										$tags = wp_get_post_tags($post->ID); 
+											if ($tags) {
+												foreach ($tags as $tag) {
+													echo ' ' , $tag->name;
+												}
+											}
+										?>
+										>
+									</i>
+									<span><?php the_title(); ?></span>
+								</div>
+								<div class="hidden-block">
+									<?php the_content(); ?> 
+								</div>
+								<a href="javascript:void(0);" class="more-button">
+									<i class="fa fa-angle-up"></i>
+								</a>
+							</div>
+						</div>
+					<? endwhile; endif; wp_reset_query(); ?>
                 </div>
               </div>
             </div>
@@ -190,42 +128,26 @@
       <div class="servises-blocks-wrap">
         <div class="container">
           <div class="row">
-            <div class="col-xs-12 col-sm-4">
-              <div class="servises-blocks working-out">
-                <i></i>
-                <h5>
-                  Создание сайтов
-                </h5>
-                <p>
-                  Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков.
-                </p>
-                <button class="popup-with-form">Заказать</button>    
-              </div>
-            </div>
-            <div class="col-xs-12 col-sm-4">
-              <div class="servises-blocks finalization">
-                <i></i>
-                <h5>
-                  Доработка сайтов
-                </h5>
-                <p>
-                  Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum. 
-                </p>
-                <button class="popup-with-form">Заказать</button>  
-              </div>
-            </div>
-            <div class="col-xs-12 col-sm-4">
-              <div class="servises-blocks design">
-                <i></i>
-                <h5>
-                  Дизайн сайтов
-                </h5>
-                <p>
-                  Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum. 
-                </p>
-                <button class="popup-with-form">Заказать</button>  
-              </div>
-            </div>
+            <?php if ( have_posts() ) : query_posts('cat=10');
+				while (have_posts()) : the_post(); ?>
+
+				<div class="col-xs-12 col-sm-4">
+					<div class="servises-blocks <?php 
+								$tags = wp_get_post_tags($post->ID); 
+									if ($tags) {
+										foreach ($tags as $tag) {
+											echo ' ' , $tag->name;
+										}
+									}
+								?>
+								>">
+							<i></i>
+							<h5><?php the_title(); ?></h5>
+							<p><?php the_content(); ?></p> 
+						<button class="popup-with-form">Заказать</button>  
+					</div>
+				</div>
+			<? endwhile; endif; wp_reset_query(); ?>
           </div>
         </div>
       </div>

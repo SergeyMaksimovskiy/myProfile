@@ -768,6 +768,7 @@ a, p, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote,
   -webkit-transition-timing-function: cubic-bezier(0.1, 0.1, 0.1, 0.1);
   transition-timing-function: cubic-bezier(0.1, 0.1, 0.1, 0.1);
   padding: 23% 5px 0 5px;
+  width: 100%;
 }
 
 #first-section .wrap-info-blocks .info-content-box .hidden-block p {
